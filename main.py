@@ -26,9 +26,11 @@ def search(name):
 @app.route("/skill/<skill_name>")
 def get_skill(skill_name):
     candidates = load_candidates_from_json('candidates.json')
-    candidates_skill = get_candidates_by_skill(skill_name)
-    return render_template("skill.html", candidates=candidates, candidates_len=len(candidates_skill), skill_name=skill_name, candidates_skill=candidates_skill)
+    list_candidate_skills = get_candidates_by_skill(skill_name)
+    len_list_candidate_skills = len(list_candidate_skills)
+    return render_template("skill.html", candidates=candidates, list_candidate_skills=list_candidate_skills, len_list_candidate_skills=len_list_candidate_skills)
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+

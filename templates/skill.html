@@ -5,8 +5,8 @@
     <title>Skill</title>
 </head>
 <body>
-    <h1>Найдено со скиллом {{ skill_name }}: {{ candidates_len }}</h1>
-    {% for candidate in candidates %}
+    <h1>Найдено со скиллом {{ skill_name }}: {{ len_list_candidate_skills }}</h1>
+    {% for candidate in list_candidate_skills %}
         <p><a href="/candidate/{{ candidate.id }}">{{ candidate.name }}</a></p>
     {% endfor %}
 </body>
